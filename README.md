@@ -1,4 +1,4 @@
-# medals
+# Módulo de Medallas
 App Medals AT
 
 ## Video Demostrativo
