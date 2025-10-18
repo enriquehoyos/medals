@@ -63,7 +63,6 @@ fun MedalsScreen(
     onBack: () -> Unit
 ) {
     val all by vm.medals.collectAsStateWithLifecycle()
-    val scope = rememberCoroutineScope()
     val context = LocalContext.current
 
     // Pausa/reanuda
@@ -95,19 +94,6 @@ fun MedalsScreen(
         }
     }
 
-    // Reset con 5 taps
-    var taps by remember { mutableStateOf(0) }
-    var lastTap by remember { mutableStateOf(0L) }
-    val tapWindow = 1200L
-    fun onHeaderTap() {
-        val now = System.currentTimeMillis()
-        taps = if (now - lastTap <= tapWindow) taps + 1 else 1
-        lastTap = now
-        if (taps >= 5) {
-            scope.launch { vm.resetAll() }
-            taps = 0
-        }
-    }
 
     Scaffold { innerPadding ->
         Box(
@@ -182,8 +168,6 @@ fun MedalsScreen(
                         }
                     }
                 }
-
-
             }
 
             if (showConfetti) {

@@ -64,6 +64,7 @@ class ProfileViewModel @Inject constructor(
     private suspend fun engineLoop() {
         val rnd = java.util.Random()
         while (isRunning.value) {
+            //3 segundos para que pueda msotrarse la cantidad de puntos ganados en un Toast
             delay((3000L..3600L).random())
 
             val list = medals.value
