@@ -183,7 +183,7 @@ fun Profile(
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(
-            text = "${userName}",
+            text = userName,
             style = MaterialTheme.typography.bodyLarge,
             color = Color.Black
         )

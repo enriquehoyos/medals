@@ -16,6 +16,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
@@ -57,6 +59,7 @@ import pe.com.medals.viewmodel.ProfileViewModel
 /**
  * Created by Quique on 10/16/2025.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MedalsScreen(
     vm: ProfileViewModel,
@@ -88,14 +91,23 @@ fun MedalsScreen(
             Toast.makeText(context, "Ha ganado $inc puntos", Toast.LENGTH_SHORT).show()
         }
     }
-    LaunchedEffect(Unit) {
-        vm.resetEvent.collect {
-            Toast.makeText(context, "Se han reiniciado los niveles", Toast.LENGTH_SHORT).show()
+
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {},
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "Volver"
+                        )
+                    }
+                }
+            )
         }
-    }
-
-
-    Scaffold { innerPadding ->
+    ) { innerPadding ->
         Box(
             Modifier
                 .fillMaxSize()
@@ -161,11 +173,6 @@ fun MedalsScreen(
                             Text("$points/100", style = MaterialTheme.typography.labelSmall)
                         }
 
-                        Spacer(Modifier.height(20.dp))
-
-                        OutlinedButton(onClick = onBack) {
-                            Text("Volver")
-                        }
                     }
                 }
             }
