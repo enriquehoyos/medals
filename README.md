@@ -4,7 +4,7 @@ App Medals AT
 ## Video Demostrativo
 He preparado una demostración rápida del funcionamiento de la app.
 
-Mírala aquí:  
+Puede visualizarlo desde aquí:  
 https://youtube.com/shorts/IV29UnhvhkM?feature=share
 
 O haz clic en la imagen:
