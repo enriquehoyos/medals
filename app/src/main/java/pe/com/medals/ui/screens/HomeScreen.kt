@@ -95,6 +95,8 @@ fun HomeScreen() {
                             Profile("Prueba Enrique Hoyos") {
                                 onHeaderTap()
                             }
+                        }
+                        item {
                             Spacer(Modifier.height(20.dp))
                         }
                         item {
@@ -178,7 +180,8 @@ fun Profile(
             painter = painterResource(id = R.drawable.ic_profile_circle),
             contentDescription = "Perfil de usuario",
             tint = Red,
-            modifier = Modifier.size(70.dp)
+            modifier = Modifier
+                .size(70.dp)
                 .clickable { onClick() }
         )
         Spacer(modifier = Modifier.width(8.dp))
