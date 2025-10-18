@@ -171,8 +171,7 @@ fun Profile(
     onClick: () -> Unit
 ) {
     Row(
-        modifier = modifier
-            .clickable { onClick() },
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
@@ -180,6 +179,7 @@ fun Profile(
             contentDescription = "Perfil de usuario",
             tint = Red,
             modifier = Modifier.size(70.dp)
+                .clickable { onClick() }
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(
