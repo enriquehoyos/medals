@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Medals</string>
+
+    <string name="profile">Mi Perfil</string>
+    <string name="medals">Medallas</string>
+    <string name="mission">Misiones</string>
+    <string name="rachas">Rachas</string>
+    <string name="album">Álbum</string>
+
+</resources>
